@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/quickpanelTitle" android:background="#ff293945" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="17.0dip" android:textColor="#ffadc1d6" android:gravity="center_vertical" android:id="@id/quickpanelTitleText" android:paddingLeft="11.0dip" android:layout_width="fill_parent" android:layout_height="25.0dip" android:text="@string/group_applications" />
+    </LinearLayout>
+    <TextView android:textSize="17.0dip" android:textColor="@*android:color/white" android:ellipsize="marquee" android:id="@id/noti_text" android:background="@*android:color/black" android:paddingLeft="11.0dip" android:paddingRight="17.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="23.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="1.0dip" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+    <LinearLayout android:gravity="left" android:orientation="horizontal" android:background="@*android:color/black" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <ImageView android:id="@id/icon_image1" android:padding="11.0dip" android:focusable="true" android:layout_width="60.0dip" android:layout_height="fill_parent" android:layout_marginLeft="6.0dip" android:scaleType="fitCenter" />
+        <ImageView android:id="@id/icon_image2" android:padding="11.0dip" android:focusable="true" android:layout_width="60.0dip" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:scaleType="fitCenter" />
+        <ImageView android:id="@id/icon_image3" android:padding="11.0dip" android:focusable="true" android:layout_width="60.0dip" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:scaleType="fitCenter" />
+        <ImageView android:id="@id/icon_image4" android:padding="11.0dip" android:focusable="true" android:layout_width="60.0dip" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:scaleType="fitCenter" />
+        <ImageView android:id="@id/icon_image5" android:padding="11.0dip" android:focusable="true" android:layout_width="60.0dip" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:scaleType="fitCenter" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher2.HomeEditBar android:id="@id/home_edit_bar" style="@style/HomeEditDragBar"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/new_folder_container" style="@style/HomeEditDragBarItemNormal">
+        <TextView android:id="@id/new_folder" android:text="@string/home_edit_bar_create_folder_title" android:drawableTop="@drawable/toolbar_ic_create_folder" style="@style/HomeEditDragBarIcon" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/new_page_container" style="@style/HomeEditDragBarItemNormal">
+        <TextView android:id="@id/new_page" android:text="@string/home_edit_bar_create_page_title" android:drawableTop="@drawable/toolbar_ic_create_page" style="@style/HomeEditDragBarIcon" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/delete_container" style="@style/HomeEditDragBarItemDelete">
+        <TextView android:id="@id/delete" android:text="@string/home_edit_bar_delete_title" android:drawableTop="@drawable/toolbar_ic_delete" style="@style/HomeEditDragBarIcon" />
+    </FrameLayout>
+</com.android.launcher2.HomeEditBar>

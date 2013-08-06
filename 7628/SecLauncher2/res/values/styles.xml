@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TouchWiz" parent="@*android:style/Theme.DeviceDefault.Wallpaper.NoTitleBar">
+        <item name="android:dialogTheme">@*android:style/Theme.DeviceDefault.Dialog</item>
+    </style>
+    <style name="TouchWiz.ChooserActivity" parent="@*android:style/Theme.DeviceDefault.Dialog">
+        <item name="android:windowBackground">@*android:color/transparent</item>
+    </style>
+    <style name="ClingButton">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@*android:color/white</item>
+        <item name="android:background">@drawable/cling_button_bg</item>
+        <item name="android:paddingLeft">35.0dip</item>
+        <item name="android:paddingTop">10.0dip</item>
+        <item name="android:paddingRight">35.0dip</item>
+        <item name="android:paddingBottom">15.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/cling_dismiss</item>
+    </style>
+    <style name="ClingTitleText">
+        <item name="android:textSize">23.0sp</item>
+        <item name="android:textColor">#ff49c0ec</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">5.0dip</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDy">2.0</item>
+        <item name="android:shadowRadius">2.0</item>
+    </style>
+    <style name="ClingText">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDy">2.0</item>
+        <item name="android:shadowRadius">2.0</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+    <style name="TabIndicator">
+        <item name="android:textSize">@dimen/tab_text_size</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/tab_widget_indicator_selector</item>
+        <item name="android:paddingLeft">6.0dip</item>
+        <item name="android:paddingRight">6.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:minWidth">132.0dip</item>
+        <item name="android:shadowColor">#bf000000</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">2.0</item>
+    </style>
+    <style name="TabIndicator.AppsCustomize" parent="@style/TabIndicator">
+        <item name="android:textColor">@color/menu_tab_text_color</item>
+    </style>
+    <style name="FolderEditText">
+        <item name="android:textSize">@dimen/open_folder_title_size</item>
+        <item name="android:textColor">@color/open_folder_title_color</item>
+        <item name="android:textColorHint">#ff7f7f7f</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/open_folder_title_bg</item>
+        <item name="android:padding">@dimen/folder_name_padding</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:hint">@string/folder_hint_text</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLength">30</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+        <item name="android:textCursorDrawable">@drawable/mainmenu_folder_textfield_cursor</item>
+    </style>
+    <item type="style" name="APKTOOL_DUMMY_0008">false</item>
+    <item type="style" name="APKTOOL_DUMMY_0009">false</item>
+    <item type="style" name="APKTOOL_DUMMY_000a">false</item>
+    <item type="style" name="APKTOOL_DUMMY_000b">false</item>
+    <item type="style" name="APKTOOL_DUMMY_000c">false</item>
+    <item type="style" name="APKTOOL_DUMMY_000d">false</item>
+    <item type="style" name="APKTOOL_DUMMY_000e">false</item>
+    <item type="style" name="APKTOOL_DUMMY_000f">false</item>
+    <style name="BaseHomeIcon">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">top|center</item>
+        <item name="android:layout_gravity">top|center</item>
+        <item name="android:background">@drawable/focusable_view_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:lines">2</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:shadowColor">#dd000000</item>
+        <item name="android:shadowDy">2.0</item>
+        <item name="android:shadowRadius">4.0</item>
+        <item name="destination">home</item>
+    </style>
+    <style name="BaseHotseatIcon">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">top|center</item>
+        <item name="android:layout_gravity">top|center</item>
+        <item name="android:background">@drawable/focusable_view_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowColor">#dd000000</item>
+        <item name="android:shadowDy">2.0</item>
+        <item name="android:shadowRadius">4.0</item>
+        <item name="destination">home</item>
+    </style>
+    <style name="BaseMenuIcon">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">top|center</item>
+        <item name="android:layout_gravity">top|center</item>
+        <item name="android:background">@drawable/focusable_view_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowColor">#dd000000</item>
+        <item name="android:shadowDy">2.0</item>
+        <item name="android:shadowRadius">4.0</item>
+        <item name="destination">menu</item>
+    </style>
+    <item type="style" name="APKTOOL_DUMMY_001b">false</item>
+    <style name="HomeEditDragBar">
+        <item name="android:layout_gravity">top</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/toolbar_bg</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/home_editDragBarSize</item>
+        <item name="android:layout_marginLeft">@dimen/menu_titleMarginLeft</item>
+        <item name="android:layout_marginRight">@dimen/menu_titleMarginRight</item>
+        <item name="android:alpha">0.0</item>
+        <item name="android:translationX">0.0dip</item>
+        <item name="android:translationY">-50.0dip</item>
+        <item name="position">barTop|iconTop</item>
+    </style>
+    <style name="HomeEditDragBarItemDelete">
+        <item name="android:background">@drawable/toolbar_glow_delete_top</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="HomeEditDragBarItemNormal">
+        <item name="android:background">@drawable/toolbar_glow_normal_top</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="MenuEditDragBar">
+        <item name="android:layout_gravity">top</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/toolbar_bg</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/menu_editDragBarSize</item>
+        <item name="android:layout_marginLeft">@dimen/menu_titleMarginLeft</item>
+        <item name="android:layout_marginRight">@dimen/menu_titleMarginRight</item>
+        <item name="android:alpha">0.0</item>
+        <item name="android:translationX">0.0dip</item>
+        <item name="android:translationY">-50.0dip</item>
+        <item name="position">barTop|iconTop</item>
+    </style>
+    <style name="MenuEditDragBarItemDelete">
+        <item name="android:background">@drawable/toolbar_glow_delete_top</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="MenuEditDragBarItemNormal">
+        <item name="android:background">@drawable/toolbar_glow_normal_top</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+</resources>

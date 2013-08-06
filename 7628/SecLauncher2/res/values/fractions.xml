@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <fraction name="config_menuBgDarkenAmountNormal">14.999998%</fraction>
+    <fraction name="config_bgDarkenAmountEdit">29.999996%</fraction>
+    <fraction name="config_folderOpenMenuDarkenAmount">10.000002%</fraction>
+    <fraction name="config_containerAlphaAmount">29.999996%</fraction>
+    <fraction name="config_bgDarkenAmountContextualPage">39.999996%</fraction>
+</resources>

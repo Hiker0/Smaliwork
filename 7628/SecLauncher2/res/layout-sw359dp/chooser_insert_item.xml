@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:textColor="#ffebebeb" android:gravity="center_vertical" android:id="@id/addToHomescreen" android:background="?android:listChoiceBackgroundIndicator" android:paddingLeft="?android:listPreferredItemPaddingLeft" android:paddingRight="?android:listPreferredItemPaddingRight" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeightSmall" android:text="@string/title_wallpaper_to" />
+    <TextView android:textSize="15.0sp" android:textColor="@*android:color/white" android:gravity="center_vertical" android:id="@id/repositioned_title" android:background="#80bebebe" android:paddingLeft="?android:listPreferredItemPaddingLeft" android:paddingRight="?android:listPreferredItemPaddingRight" android:layout_width="fill_parent" android:layout_height="26.0dip" android:text="@string/menu_item_add_item" />
+    <ListView android:id="@id/addtolist" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

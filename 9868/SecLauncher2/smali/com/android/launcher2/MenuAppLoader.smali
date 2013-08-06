@@ -152,6 +152,75 @@
     return-void
 .end method
 
+.method hide(Ljava/util/List;)V
+    .locals 5
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Landroid/content/pm/ResolveInfo;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .local p1, apps:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
+    if-eqz p1, :cond_1
+
+    const/4 v1, 0x0
+
+    .local v1, hideapp:Landroid/content/pm/ResolveInfo;
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    if-eqz p1, :cond_1
+
+    .line 33
+    invoke-interface {p1, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    .line 36
+    .end local v1           #hideapp:Landroid/content/pm/ResolveInfo;
+    :cond_1
+    return-void
+
+    .restart local v1       #hideapp:Landroid/content/pm/ResolveInfo;
+    :cond_2
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/pm/ResolveInfo;
+
+    .local v0, app:Landroid/content/pm/ResolveInfo;
+    iget-object v3, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v3, v3, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+
+    const-string v4, "com.android.vending"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contentEquals(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    move-object v1, v0
+
+    goto :goto_0
+.end method
+
+#huaqi end }
 .method private createApp(Landroid/content/pm/ResolveInfo;)Lcom/android/launcher2/AppItem;
     .locals 9
     .parameter "info"
@@ -422,6 +491,12 @@
     invoke-virtual {v2, v1, v3}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v0
+	
+	#huaqi start{
+	
+	invoke-virtual {p0, v0}, Lcom/android/launcher2/MenuAppLoader;->hide(Ljava/util/List;)V
+	
+	#huaqi end}
 
     .line 188
     .local v0, activities:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
@@ -1213,6 +1288,13 @@
     invoke-virtual {v3, v0, v13}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v20
+	#huaqi start{
+	
+	move-object/from16 v5, v20
+	move-object/from16 v6, p0
+	invoke-virtual {v6, v5}, Lcom/android/launcher2/MenuAppLoader;->hide(Ljava/util/List;)V
+	
+	#huaqi end}
 
     .line 256
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J

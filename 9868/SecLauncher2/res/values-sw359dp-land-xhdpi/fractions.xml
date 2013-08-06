@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <fraction name="open_folder_icon_bottom_offset">50.0%</fraction>
+    <fraction name="folder_app_icon_scale">27.999996%</fraction>
+</resources>

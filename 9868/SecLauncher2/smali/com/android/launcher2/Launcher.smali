@@ -16,12 +16,22 @@
         Lcom/android/launcher2/Launcher$CloseSystemDialogsIntentReceiver;,
         Lcom/android/launcher2/Launcher$StateAnimatorProvider;,
         Lcom/android/launcher2/Launcher$LocaleConfiguration;,
+		#huaqi start <<
+		Lcom/android/launcher2/Launcher$ProximitySensorListener;,
+		#huaq end >>
         Lcom/android/launcher2/Launcher$HardwareKeys;
     }
 .end annotation
 
 
 # static fields
+#huaqi start <<
+.field static final GES_POLLING_RATE:I = 0x96
+
+.field public static  HQ_GESENSOR_SUPPORT:Z = true
+
+.field public static  HQ_PSENSOR_SUPPORT:Z = true
+#huaqi end >>
 .field public static CSCFEATURE_LAUNCHER_DISABLEHELPUI:Z = false
 
 .field public static CSCFEATURE_LAUNCHER_HOMESCREENEDITMODE:Z = false
@@ -84,6 +94,23 @@
 
 
 # instance fields
+#huaqi start <<
+.field private mGesEnabled:Z
+
+.field private mGesHandler:Landroid/os/Handler;
+
+.field mGesPolling:Ljava/lang/Runnable;
+
+.field private mGesPsensorObserver:Landroid/database/ContentObserver;
+
+.field mLastEvent:I
+
+.field mLastSleepStatus:I
+
+.field private final mProximitySensorListener:Lcom/android/launcher2/Launcher$ProximitySensorListener;
+
+.field private mProximitySensorManager:Lcom/eminent/utility/ProximitySensorManager;
+#huaqi end >>
 .field private mActivityName:Landroid/content/ComponentName;
 
 .field private mAnimationLayer:Lcom/android/launcher2/AnimationLayer;
@@ -332,6 +359,72 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+	
+	#huaqi start <<
+	new-instance v0, Ljava/io/File;
+
+    const-string v1, "/sys/bus/platform/drivers/als_ps/ges_enable"
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/launcher2/Launcher;->HQ_GESENSOR_SUPPORT:Z
+
+    sget-boolean v0, Lcom/android/launcher2/Launcher;->HQ_GESENSOR_SUPPORT:Z
+
+    if-eqz v0, :zxf_cond_0
+
+    const/4 v0, 0x0
+
+    :zxf_goto_0
+    sput-boolean v0, Lcom/android/launcher2/Launcher;->HQ_PSENSOR_SUPPORT:Z
+
+    goto :zxf_next
+
+    :zxf_cond_0
+    const/4 v0, 0x1
+
+    goto :zxf_goto_0
+	
+	:zxf_next
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    iput-object v0, p0, Lcom/android/launcher2/Launcher;->mGesHandler:Landroid/os/Handler;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/android/launcher2/Launcher;->mLastEvent:I
+
+    new-instance v0, Lcom/android/launcher2/Launcher$9;
+
+    invoke-direct {v0, p0}, Lcom/android/launcher2/Launcher$9;-><init>(Lcom/android/launcher2/Launcher;)V
+
+    iput-object v0, p0, Lcom/android/launcher2/Launcher;->mGesPolling:Ljava/lang/Runnable;
+
+    new-instance v0, Lcom/android/launcher2/Launcher$ProximitySensorListener;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/android/launcher2/Launcher$ProximitySensorListener;-><init>(Lcom/android/launcher2/Launcher;Lcom/android/launcher2/Launcher$9;)V
+
+    iput-object v0, p0, Lcom/android/launcher2/Launcher;->mProximitySensorListener:Lcom/android/launcher2/Launcher$ProximitySensorListener;
+
+    new-instance v0, Lcom/android/launcher2/Launcher$10;
+
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
+
+    invoke-direct {v0, p0, v1}, Lcom/android/launcher2/Launcher$10;-><init>(Lcom/android/launcher2/Launcher;Landroid/os/Handler;)V
+
+    iput-object v0, p0, Lcom/android/launcher2/Launcher;->mGesPsensorObserver:Landroid/database/ContentObserver;
+	#huaqi end >>
 
     .line 243
     return-void
@@ -442,6 +535,65 @@
 
     goto :goto_0
 .end method
+
+#huaqi start <<
+.method static synthetic access$000(Lcom/android/launcher2/Launcher;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    iget-boolean v0, p0, Lcom/android/launcher2/Launcher;->mGesEnabled:Z
+
+    return v0
+.end method
+
+.method static synthetic access$002(Lcom/android/launcher2/Launcher;Z)Z
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+
+    iput-boolean p1, p0, Lcom/android/launcher2/Launcher;->mGesEnabled:Z
+
+    return p1
+.end method
+
+.method static synthetic access$100(Lcom/android/launcher2/Launcher;)Landroid/os/Handler;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+
+    iget-object v0, p0, Lcom/android/launcher2/Launcher;->mGesHandler:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
+.method static synthetic access$300(Lcom/android/launcher2/Launcher;Z)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+
+    invoke-direct {p0, p1}, Lcom/android/launcher2/Launcher;->simulateTouchEvent(Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$402(Lcom/android/launcher2/Launcher;)Lcom/eminent/utility/ProximitySensorManager;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+
+    iget-object v0, p0, Lcom/android/launcher2/Launcher;->mProximitySensorManager:Lcom/eminent/utility/ProximitySensorManager;
+
+    return-object v0
+.end method
+
+#huaqi end >>
 
 .method static synthetic access$1000(Lcom/android/launcher2/Launcher;)Lcom/android/launcher2/LauncherModel;
     .locals 1
@@ -568,6 +720,22 @@
 
     return-void
 .end method
+
+#huaqi start <<
+.method private simulateTouchEvent(Z)V
+    .locals 1
+    .parameter "orientionLeft"
+
+    .prologue
+    new-instance v0, Lcom/android/launcher2/Launcher$11;
+
+    invoke-direct {v0, p0, p1}, Lcom/android/launcher2/Launcher$11;-><init>(Lcom/android/launcher2/Launcher;Z)V
+
+    invoke-virtual {v0}, Lcom/android/launcher2/Launcher$11;->start()V
+
+    return-void
+.end method
+#huaqi end >>
 
 .method private checkForLocaleChange()V
     .locals 10
@@ -5383,6 +5551,69 @@
     .parameter "event"
 
     .prologue
+    #huaqi start <<
+    const/4 v0, 0x1
+	
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
+
+    move-result v1
+
+    if-nez v1, :zxf_cond_0
+
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
+
+    move-result v1
+
+    packed-switch v1, :zxf_pswitch_data_0
+
+    :zxf_cond_0
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
+
+    move-result v1
+
+    if-ne v1, v0, :zxf_cond_1
+
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
+
+    move-result v1
+
+    packed-switch v1, :zxf_pswitch_data_1
+
+    :zxf_cond_1
+    goto :zxf_end
+
+    :zxf_goto_0
+    :zxf_pswitch_0
+    return v0
+
+    :zxf_pswitch_1
+	const/4 v1, 0x01
+    invoke-direct {p0, v1}, Lcom/android/launcher2/Launcher;->simulateTouchEvent(Z)V
+
+    goto :zxf_goto_0
+
+    :zxf_pswitch_2
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v1}, Lcom/android/launcher2/Launcher;->simulateTouchEvent(Z)V
+
+    goto :zxf_goto_0
+
+    :zxf_pswitch_data_0
+    .packed-switch 0x15
+        :zxf_pswitch_0
+        :zxf_pswitch_0
+    .end packed-switch
+
+    :zxf_pswitch_data_1
+    .packed-switch 0x15
+        :zxf_pswitch_1
+        :zxf_pswitch_2
+    .end packed-switch
+	
+	:zxf_end
+	#huaqi end  >>
+	
     const v8, 0x7f07006c
 
     const v7, 0x7f070061
@@ -5390,6 +5621,7 @@
     const/4 v0, 0x0
 
     const/4 v4, 0x1
+	
 
     .line 1032
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
@@ -8428,6 +8660,17 @@
 
     .line 387
     :goto_4
+	#huaqi start <<
+    
+    new-instance v0, Lcom/eminent/utility/ProximitySensorManager;
+
+    iget-object v1, p0, Lcom/android/launcher2/Launcher;->mProximitySensorListener:Lcom/android/launcher2/Launcher$ProximitySensorListener;
+
+    invoke-direct {v0, p0, v1}, Lcom/eminent/utility/ProximitySensorManager;-><init>(Landroid/content/Context;Lcom/eminent/utility/ProximitySensorManager$Listener;)V
+
+    iput-object v0, p0, Lcom/android/launcher2/Launcher;->mProximitySensorManager:Lcom/eminent/utility/ProximitySensorManager;
+	#huaqi end >>
+	
     return-void
 
     .line 247
@@ -9751,7 +9994,48 @@
     .line 521
     invoke-virtual {p0, v0}, Lcom/android/launcher2/Launcher;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 522
+	#huaqi start <<
+	
+    const/4 v1, 0x0
+
+    iput-boolean v1, p0, Lcom/android/launcher2/Launcher;->mGesEnabled:Z
+
+    iget-boolean v0, p0, Lcom/android/launcher2/Launcher;->mGesEnabled:Z
+
+    if-eqz v0, :zxf_cond_0
+
+    const/4 v0, 0x1
+
+    :zxf_goto_0
+    invoke-static {v0}, Lcom/eminent/utility/Utility;->setGestureEnabled(I)V
+
+    iget-object v0, p0, Lcom/android/launcher2/Launcher;->mGesHandler:Landroid/os/Handler;
+
+    iget-object v2, p0, Lcom/android/launcher2/Launcher;->mGesPolling:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    iget-object v0, p0, Lcom/android/launcher2/Launcher;->mProximitySensorManager:Lcom/eminent/utility/ProximitySensorManager;
+
+    invoke-virtual {v0, v1}, Lcom/eminent/utility/ProximitySensorManager;->disable(Z)V
+
+    invoke-virtual {p0}, Lcom/android/launcher2/Launcher;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/launcher2/Launcher;->mGesPsensorObserver:Landroid/database/ContentObserver;
+
+    invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
+
+    goto :zxf_end
+
+    :zxf_cond_0
+    move v0, v1
+    goto :zxf_goto_0
+	
+	:zxf_end
+	
+	.line 522
     return-void
 .end method
 
@@ -10272,6 +10556,113 @@
     .line 597
     :cond_7
     :goto_2
+		#huaqi start <<
+	const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0}, Lcom/android/launcher2/Launcher;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "ges_p_sensor"
+
+    invoke-static {v3, v4, v1}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    .local v0, value:I
+    if-ne v0, v1, :zxf_cond_1
+	
+	sget-boolean v1, Lcom/android/launcher2/Launcher;->HQ_PSENSOR_SUPPORT :Z
+
+    if-eqz v1, :zxf_cond_3
+
+    iget-object v3, p0, Lcom/android/launcher2/Launcher;->mProximitySensorManager:Lcom/eminent/utility/ProximitySensorManager;
+
+    invoke-virtual {v3}, Lcom/eminent/utility/ProximitySensorManager;->enable()V
+	
+	:zxf_cond_3
+	
+	sget-boolean v1, Lcom/android/launcher2/Launcher;->HQ_GESENSOR_SUPPORT :Z
+
+    if-eqz v1, :zxf_goto_1
+
+    iget-object v3, p0, Lcom/android/launcher2/Launcher;->mGesHandler:Landroid/os/Handler;
+
+    iget-object v4, p0, Lcom/android/launcher2/Launcher;->mGesPolling:Ljava/lang/Runnable;
+
+    invoke-virtual {v3, v4}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    iput-boolean v1, p0, Lcom/android/launcher2/Launcher;->mGesEnabled:Z
+
+    iget-object v3, p0, Lcom/android/launcher2/Launcher;->mGesHandler:Landroid/os/Handler;
+
+    iget-object v4, p0, Lcom/android/launcher2/Launcher;->mGesPolling:Ljava/lang/Runnable;
+
+    const-wide/16 v5, 0x96
+
+    invoke-virtual {v3, v4, v5, v6}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    iget-boolean v3, p0, Lcom/android/launcher2/Launcher;->mGesEnabled:Z
+
+    if-eqz v3, :zxf_cond_0
+
+    :zxf_goto_0
+    invoke-static {v1}, Lcom/eminent/utility/Utility;->setGestureEnabled(I)V
+
+    :zxf_goto_1
+    invoke-virtual {p0}, Lcom/android/launcher2/Launcher;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v3, "ges_p_sensor"
+
+    invoke-static {v3}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/android/launcher2/Launcher;->mGesPsensorObserver:Landroid/database/ContentObserver;
+
+    invoke-virtual {v1, v3, v2, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+
+	goto :zxf_end
+
+    :zxf_cond_0
+    move v1, v2
+
+    goto :zxf_goto_0
+
+    :zxf_cond_1
+    iget-object v3, p0, Lcom/android/launcher2/Launcher;->mProximitySensorManager:Lcom/eminent/utility/ProximitySensorManager;
+
+    invoke-virtual {v3, v2}, Lcom/eminent/utility/ProximitySensorManager;->disable(Z)V
+
+    iput-boolean v2, p0, Lcom/android/launcher2/Launcher;->mGesEnabled:Z
+
+    iget-boolean v3, p0, Lcom/android/launcher2/Launcher;->mGesEnabled:Z
+
+    if-eqz v3, :zxf_cond_2
+
+    :zxf_goto_2
+    invoke-static {v1}, Lcom/eminent/utility/Utility;->setGestureEnabled(I)V
+
+    iget-object v1, p0, Lcom/android/launcher2/Launcher;->mGesHandler:Landroid/os/Handler;
+
+    iget-object v3, p0, Lcom/android/launcher2/Launcher;->mGesPolling:Ljava/lang/Runnable;
+
+    invoke-virtual {v1, v3}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    goto :zxf_goto_1
+
+    :zxf_cond_2
+    move v1, v2
+
+    goto :zxf_goto_2
+	
+	:zxf_end
+	#huaqi end >>
+	
     return-void
 
     .line 546

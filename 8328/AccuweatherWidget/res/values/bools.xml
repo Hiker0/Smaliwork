@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="cts_check_wifi_state">false</bool>
+    <bool name="hero_widget_animation">true</bool>
+    <bool name="cts_search_new_location_while_refreshing">false</bool>
+</resources>

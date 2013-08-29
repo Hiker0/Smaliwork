@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata widgetId="com.sec.android.widgetapp.ap.hero.accuweather.widget" description="@string/b_type_idle" icon="@drawable/icon" themeName="AccuWeather (Hero Weather)" preview="@drawable/weather_widget_thumbnail" width="@dimen/type_b_width" height="@dimen/type_b_height" order="0" class="com.sec.android.widgetapp.ap.hero.accuweather.widget.WeatherClock" />

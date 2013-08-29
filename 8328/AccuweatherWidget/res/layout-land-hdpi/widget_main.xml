@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/background" android:focusable="true" android:nextFocusDown="@id/refresh" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/emboss" android:paddingLeft="1.0dip" android:paddingTop="1.0dip" android:paddingRight="2.0dip" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_alignParentTop="true" />
+        <ImageView android:id="@id/weather_bg1" android:focusable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+        <ImageView android:id="@id/weather_bg2" android:focusable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+        <ImageView android:id="@id/weather_bg_front1" android:focusable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+        <ImageView android:id="@id/weather_bg_front2" android:focusable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+        <ImageView android:id="@id/weather_bg_rain" android:focusable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/frame_mask_shadow" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.sec.android.widgetapp.ap.hero.accuweather.widget.common.CustMaskView android:id="@id/frame_masking" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/frame_shadow" android:background="@drawable/widget_bg_shadow" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/arrow_group" android:focusable="false" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/top_arrow" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+        <ImageView android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bottom_arrow" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/eventiconzone" android:focusable="false" android:layout_width="43.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="13.0dip">
+        <ImageView android:id="@id/eventicon" android:layout_width="43.0dip" android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/weathericonzone" android:focusable="false" android:layout_width="71.0dip" android:layout_height="49.0dip" android:layout_marginTop="24.0dip" android:layout_alignParentRight="true">
+        <ImageView android:id="@id/weathericon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/weather_forecast_01_02" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/timezone_group" android:focusable="false" android:layout_width="fill_parent" android:layout_height="66.0dip" android:layout_marginTop="4.0dip">
+        <RelativeLayout android:id="@id/timezone" android:layout_width="fill_parent" android:layout_height="66.0dip">
+            <RelativeLayout android:id="@id/timezone_inner" android:layout_width="wrap_content" android:layout_height="66.0dip" android:layout_centerInParent="true">
+                <ImageView android:id="@id/first_hour" android:layout_width="42.0dip" android:layout_height="66.0dip" android:layout_marginRight="1.0dip" />
+                <ImageView android:id="@id/second_hour" android:layout_width="42.0dip" android:layout_height="66.0dip" android:layout_toRightOf="@id/first_hour" />
+                <ImageView android:id="@id/clock_dot" android:background="@drawable/time_center" android:layout_width="20.0dip" android:layout_height="66.0dip" android:layout_toRightOf="@id/second_hour" />
+                <ImageView android:id="@id/first_minute" android:layout_width="42.0dip" android:layout_height="66.0dip" android:layout_marginRight="1.0dip" android:layout_toRightOf="@id/clock_dot" />
+                <ImageView android:id="@id/second_minute" android:layout_width="42.0dip" android:layout_height="66.0dip" android:layout_toRightOf="@id/first_minute" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/timezone_am_pm" android:layout_width="wrap_content" android:layout_height="66.0dip" android:layout_toRightOf="@id/timezone_inner">
+                <TextView android:textSize="20.0dip" android:textColor="@color/col_F8F8F8" android:gravity="top" android:id="@id/am_pm" android:layout_width="wrap_content" android:layout_height="29.0dip" android:includeFontPadding="false" android:shadowColor="@color/block_shadow30_text" android:shadowDx="3.0" android:shadowDy="2.0" android:shadowRadius="3.0" android:layout_alignParentBottom="true" />
+                <ImageView android:id="@id/widget_hero_ic_dts" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="33.0dip" android:layout_above="@id/am_pm" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/timezone2" android:layout_width="fill_parent" android:layout_height="66.0dip">
+            <RelativeLayout android:id="@id/timezone_inner2" android:layout_width="wrap_content" android:layout_height="66.0dip" android:layout_centerInParent="true">
+                <ImageView android:id="@id/first_hour2" android:layout_width="42.0dip" android:layout_height="66.0dip" android:layout_marginRight="1.0dip" />
+                <ImageView android:id="@id/second_hour2" android:layout_width="42.0dip" android:layout_height="66.0dip" android:layout_toRightOf="@id/first_hour2" />
+                <ImageView android:id="@id/clock_dot2" android:background="@drawable/time_center" android:layout_width="20.0dip" android:layout_height="66.0dip" android:layout_toRightOf="@id/second_hour2" />
+                <ImageView android:id="@id/first_minute2" android:layout_width="42.0dip" android:layout_height="66.0dip" android:layout_marginRight="1.0dip" android:layout_toRightOf="@id/clock_dot2" />
+                <ImageView android:id="@id/second_minute2" android:layout_width="42.0dip" android:layout_height="66.0dip" android:layout_toRightOf="@id/first_minute2" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/timezone_am_pm2" android:layout_width="wrap_content" android:layout_height="66.0dip" android:layout_toRightOf="@id/timezone_inner2">
+                <TextView android:textSize="20.0dip" android:textColor="@color/col_F8F8F8" android:gravity="top" android:id="@id/am_pm2" android:layout_width="wrap_content" android:layout_height="29.0dip" android:includeFontPadding="false" android:shadowColor="@color/block_shadow30_text" android:shadowDx="3.0" android:shadowDy="2.0" android:shadowRadius="3.0" android:layout_alignParentBottom="true" />
+                <ImageView android:id="@id/widget_hero_ic_dts2" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="33.0dip" android:layout_above="@id/am_pm2" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/datezone" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/timezone_group">
+        <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/date_zone_text" android:gravity="center_horizontal" android:id="@id/date" android:layout_width="fill_parent" android:layout_height="wrap_content" android:includeFontPadding="false" android:shadowColor="@color/block_shadow75_text" android:shadowDx="0.0" android:shadowDy="2.0" android:shadowRadius="4.0" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/temper_zone" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="10.0dip" android:layout_above="@id/logo_zone">
+        <TextView android:textSize="35.0dip" android:textColor="@color/white_text" android:id="@id/current_temper" android:layout_width="wrap_content" android:layout_height="wrap_content" android:shadowColor="@color/block_shadow75_text" android:shadowDx="0.0" android:shadowDy="2.0" android:shadowRadius="3.0" android:layout_alignParentLeft="true" />
+        <ImageView android:id="@id/temper_icon" android:background="@drawable/temparature_icon" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_toRightOf="@id/current_temper" />
+        <ImageView android:id="@id/temper_c" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-5.0dip" android:layout_marginTop="20.0dip" android:layout_toRightOf="@id/temper_icon" />
+        <LinearLayout android:gravity="right" android:orientation="horizontal" android:id="@id/RightText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_toRightOf="@id/temper_c" android:layout_alignParentRight="true">
+            <ImageView android:gravity="center" android:layout_gravity="bottom" android:id="@id/currentlocationicon" android:visibility="invisible" android:layout_width="14.0dip" android:layout_height="14.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/widget_hero_ic_current_location_small" />
+            <TextView android:textSize="12.0dip" android:textStyle="bold" android:textColor="@color/white_text" android:ellipsize="marquee" android:id="@id/weather_city" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="3.0dip" android:singleLine="true" android:includeFontPadding="false" android:shadowColor="@color/block_shadow75_text" android:shadowDx="0.0" android:shadowDy="2.0" android:shadowRadius="3.0" android:layout_alignParentRight="true" android:marqueeRepeatLimit="0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="right" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_toRightOf="@id/temper_c" android:layout_below="@id/RightText" android:layout_alignParentRight="true">
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text" android:ellipsize="marquee" android:id="@id/weather_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:shadowColor="@color/block_shadow75_text" android:shadowDx="0.0" android:shadowDy="2.0" android:shadowRadius="3.0" android:layout_alignParentRight="true" android:marqueeRepeatLimit="0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/logo_zone" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true">
+        <ImageView android:background="@drawable/accuweather_logo" android:layout_width="73.0dip" android:layout_height="6.0dip" />
+    </RelativeLayout>
+    <RelativeLayout android:focusable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true" android:layout_centerHorizontal="true">
+        <RelativeLayout android:id="@id/refreshLayout" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+            <ProgressBar android:id="@id/refreshflipper" android:focusable="false" android:visibility="gone" android:drawingCacheQuality="high" android:duplicateParentState="true" android:layout_width="19.0dip" android:layout_height="19.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="5.0dip" android:indeterminate="true" android:indeterminateOnly="true" android:indeterminateBehavior="cycle" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:layout_centerInParent="true" android:autoStart="true" />
+            <RelativeLayout android:id="@id/refresh" android:focusable="true" android:nextFocusUp="@id/background" android:layout_width="19.0dip" android:layout_height="19.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="5.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:contentDescription="@string/refresh_button">
+                <ImageView android:background="@drawable/widget_refresh_button" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/refresh" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/notempty_city" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:id="@id/weather_update_date_layout" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="36.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+                <TextView android:textSize="10.0dip" android:textColor="@color/col_80_FFFFFF" android:id="@id/lastupdate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:shadowColor="@color/block_shadow75_text" android:shadowDx="0.0" android:shadowDy="1.0" android:shadowRadius="2.0" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/empty_city" android:focusable="false" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true">
+            <TextView android:textSize="20.0dip" android:gravity="center" android:id="@id/emptyselect" android:layout_width="304.0dip" android:layout_height="wrap_content" android:text="@string/add_city_message" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <RelativeLayout android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="18.0dip" android:layout_alignParentBottom="true">
+            <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="@color/col_F5F5F5" android:gravity="center" android:id="@id/taptoaddcity" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/add_city_message" android:lines="1" android:includeFontPadding="false" android:shadowColor="@color/block_shadow75_text" android:shadowDx="0.0" android:shadowDy="2.0" android:shadowRadius="4.0" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center_vertical" android:layout_gravity="center" android:id="@id/error" android:focusable="false" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="-3.0dip" android:layout_marginBottom="-4.0dip" android:layout_centerInParent="true">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <TextView android:textSize="20.0dip" android:textColor="@color/col_FFFFFF" android:gravity="center" android:id="@id/error_message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/message_network_connnection_failed" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

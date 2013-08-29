@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TwSoftkeyItemStyle">
+        <item name="android:textAppearance">@style/TwTextAppearanceSoftkey</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">0.0dip</item>
+        <item name="android:paddingBottom">0.0dip</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:maxLines">2</item>
+    </style>
+    <style name="TwTextAppearanceSoftkey">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_softkey</item>
+    </style>
+    <style name="TwTextAppearanceListOneLine">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listoneline</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLinePrimary">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listtwolineprimary</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLineSecondary">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/tw_textappearance_listtwolinesecondary</item>
+    </style>
+</resources>

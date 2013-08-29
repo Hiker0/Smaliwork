@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView android:background="@drawable/tab_widget_indicator_selector" android:paddingLeft="@dimen/toolbar_button_horizontal_padding" android:paddingRight="@dimen/toolbar_button_horizontal_padding" android:focusable="true" android:clickable="true" android:src="@drawable/menu_downloaded_icon" android:scaleType="center" android:onClick="onClickDownloadedButton" android:contentDescription="@string/menu_tab_download"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:launcher="http://schemas.android.com/apk/res/com.sec.android.app.launcher" />

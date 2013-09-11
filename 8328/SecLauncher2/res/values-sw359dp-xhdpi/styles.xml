@@ -19,7 +19,7 @@
         <item name="android:drawablePadding">2.0dip</item>
     </style>
     <style name="HomeIcon" parent="@style/BaseHomeIcon">
-        <item name="android:textSize">14.0dip</item>
+        <item name="android:textSize">12.0dip</item>
         <item name="android:ellipsize">marquee</item>
         <item name="android:paddingLeft">3.0dip</item>
         <item name="android:paddingTop">10.0dip</item>
@@ -33,16 +33,17 @@
         <item name="android:drawablePadding">0.0dip</item>
     </style>
     <style name="HotseatIcon" parent="@style/BaseHotseatIcon">
-        <item name="android:textSize">13.0dip</item>
+        <item name="android:textSize">12.0dip</item>
         <item name="android:ellipsize">marquee</item>
-        <item name="android:paddingLeft">3.0dip</item>
+        <item name="android:paddingLeft">10.0dip</item>
         <item name="android:paddingTop">10.0dip</item>
         <item name="android:paddingRight">3.0dip</item>
         <item name="android:singleLine">true</item>
-        <item name="android:drawablePadding">4.0dip</item>
+        <item name="android:drawablePadding">-2.5dip</item>
+
     </style>
     <style name="HotseatIcon.Folder" parent="@style/HotseatIcon">
-        <item name="android:paddingTop">0.0dip</item>
+        <item name="android:paddingTop">-13.0dip</item>
         <item name="android:drawablePadding">0.0dip</item>
     </style>
     <style name="MenuEditDragBarIcon">

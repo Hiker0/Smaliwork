@@ -21,10 +21,10 @@
     <integer name="config_workspaceAppsCustomizeAnimationStagger">100</integer>
     <integer name="config_tabTransitionDuration">250</integer>
     <integer name="config_appsCustomizeDragSlopeThreshold">150</integer>
-    <integer name="config_workspaceDefaultScreenCount">7</integer>
+    <integer name="config_workspaceDefaultScreenCount">5</integer>
     <integer name="config_workspaceDefaultScreenCount_simple">5</integer>
     <integer name="config_workspaceMaxScreenCount">7</integer>
-    <integer name="config_workspaceDefaultHomeScreenIndex">3</integer>
+    <integer name="config_workspaceDefaultHomeScreenIndex">2</integer>
     <integer name="config_workspaceDefaultHomeScreenIndex_simple">2</integer>
     <integer name="config_dropTargetBgTransitionDuration">100</integer>
     <integer name="config_crosshairsFadeInTime">600</integer>

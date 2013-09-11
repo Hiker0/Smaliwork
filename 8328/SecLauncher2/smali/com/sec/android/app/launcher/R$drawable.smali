@@ -620,6 +620,9 @@
 .field public static final widget_resize_handle:I = 0x7f02012d
 
 .field public static final widget_resize_handle_invalid:I = 0x7f02012e
+#hq start <<
+.field public static final pageindicator_defaultpage:I = 0x7f020131
+#hq end >>
 
 
 # direct methods

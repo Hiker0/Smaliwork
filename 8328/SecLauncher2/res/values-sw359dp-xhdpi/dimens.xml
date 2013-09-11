@@ -25,6 +25,7 @@
     <dimen name="drift_slop">6.669983dip</dimen>
     <dimen name="folder_cell_width">74.0dip</dimen>
     <dimen name="folder_cell_height">95.0dip</dimen>
+    <dimen name="folder_icon_appIconTopPadding">8.0dip</dimen>
     <dimen name="workspace_overscroll_drawable_padding">0.0dip</dimen>
     <dimen name="wsqv_verticalGap">20.0dip</dimen>
     <dimen name="wsqv_horizontalGap">20.0dip</dimen>

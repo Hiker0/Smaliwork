@@ -264,6 +264,11 @@
 
     .prologue
     .line 445
+#hq start <<
+    #const-string v1, "zxf-l"
+    #const-string v2, "draw_: "
+    #invoke-static {v1,v2} ,Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+#hq end >>
     iget-boolean v0, p0, Lcom/android/launcher2/FolderIconView;->mDrawPlate:Z
 
     if-eqz v0, :cond_0
@@ -895,6 +900,13 @@
 
     .prologue
     .line 462
+#hq start <<
+    const-string v1, "zxf-l"
+    const-string v2, "drawPlate: "
+    invoke-static {v1,v2} ,Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    #return-void
+#hq end >>
+
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/launcher2/FolderIconView;->mPlateFactor:Lcom/android/launcher2/ScalarAnimator;

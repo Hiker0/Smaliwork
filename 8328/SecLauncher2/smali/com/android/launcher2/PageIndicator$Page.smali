@@ -91,10 +91,10 @@
     .line 505
 
     #hq start <<
-    const-string v1, "zxf-l" 
-    invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-    move-result-object v2
-    invoke-static {v1,v2} ,Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    #const-string v1, "zxf-l" 
+    #invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    #move-result-object v2
+    #invoke-static {v1,v2} ,Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     #hq end >>
     #hq start <<
     invoke-static {}, Lcom/android/launcher2/LauncherApplication;->getHomeScreenIndex()I
@@ -201,10 +201,24 @@
     .local v1, grow:I
     iget-object v6, p0, Lcom/android/launcher2/PageIndicator$Page;->this$0:Lcom/android/launcher2/PageIndicator;
 
+    #hq start <<
+    move v8, p2
+    
+    if-ne v8 , v10,  :zxf_0
+    
+    #getter for: Lcom/android/launcher2/PageIndicator;->mPageDrawableDef:Landroid/graphics/drawable/Drawable;
+    
+    invoke-static {v6}, Lcom/android/launcher2/PageIndicator;->access$201(Lcom/android/launcher2/PageIndicator;)Landroid/graphics/drawable/Drawable;
+    move-result-object v6
+    goto :zxf_end0
+    :zxf_0
+    #hq end >>
     #getter for: Lcom/android/launcher2/PageIndicator;->mPageDrawable:Landroid/graphics/drawable/Drawable;
     invoke-static {v6}, Lcom/android/launcher2/PageIndicator;->access$200(Lcom/android/launcher2/PageIndicator;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v6
+
+    :zxf_end0
 
     invoke-virtual {v6}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
@@ -226,15 +240,17 @@
 
     neg-int v7, v1
 
-    const/4 v8, 0x02
-    
-    neg-int v7, v8
+    const v8, 0x01
 
-    add-int/2addr v4,v8
+    neg-int v1, v8
+    
+    add-int/2addr v7,v8
+
+    const v8, 0x02
 
     add-int v9, v4, v1
-    
-    const/4 v8, 0x0
+
+    const v8, 0x0
 
     invoke-virtual {v6, v7, v8, v9, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
     
@@ -248,7 +264,7 @@
     
     neg-int v7, v1
 
-    const/4 v8, 0x07
+    const v8, 0x04
 
     add-int v9, v4, v1
     

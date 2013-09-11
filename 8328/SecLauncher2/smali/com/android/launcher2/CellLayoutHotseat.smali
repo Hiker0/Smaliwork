@@ -581,6 +581,7 @@
 
     iget v2, p0, Lcom/android/launcher2/CellLayoutHotseat;->mMaxCellCount:I
 
+    const/4 v2, 0x4
     if-le v1, v2, :cond_0
 
     const/4 v0, 0x1

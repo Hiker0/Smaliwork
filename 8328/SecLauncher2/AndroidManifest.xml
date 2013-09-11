@@ -29,7 +29,7 @@
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="com.google.android.gm.permission.READ_CONTENT_PROVIDER" />
-    <application android:theme="@style/TouchWiz" android:label="@string/application_name" android:icon="@drawable/ic_launcher_home" android:name="com.android.launcher2.LauncherApplication" android:hardwareAccelerated="@bool/config_hardwareAccelerated" android:largeHeap="@bool/config_largeHeap">
+    <application android:theme="@style/TouchWiz" android:label="@string/application_name" android:debuggable="true" android:icon="@drawable/ic_launcher_home" android:name="com.android.launcher2.LauncherApplication" android:hardwareAccelerated="@bool/config_hardwareAccelerated" android:largeHeap="@bool/config_largeHeap">
         <activity android:name="com.android.launcher2.Launcher" android:clearTaskOnLaunch="true" android:stateNotNeeded="true" android:launchMode="singleTask"  android:configChanges="keyboardHidden|uiMode|screenSize" android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

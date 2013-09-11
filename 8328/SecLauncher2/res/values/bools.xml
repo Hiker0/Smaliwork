@@ -4,7 +4,7 @@
     <bool name="config_largeHeap">true</bool>
     <bool name="config_hasSoftMenuKey">false</bool>
     <bool name="config_isTabletLayout">false</bool>
-    <bool name="config_fixedWallpaperOffset">false</bool>
+    <bool name="config_fixedWallpaperOffset">true</bool>
     <bool name="opt_showHelpTextOnEmptyHomePage">false</bool>
     <bool name="opt_showToastWhenNewMenuPageCreated">true</bool>
 </resources>

@@ -67,18 +67,17 @@
     </style>
       <style name="TabIndicator.AppsCustomize" parent="@style/TabIndicator">
         <item name="android:textColor">@color/menu_tab_text_color</item>
-        <item name="android:minWidth">300.0dip</item>
     </style>
     <style name="HomeIcon.Folder" parent="@style/HomeIcon">
         <item name="android:paddingTop">0.0dip</item>
         <item name="android:drawablePadding">0.0dip</item>
     </style>
     <style name="HotseatIcon" parent="@style/BaseHotseatIcon">
-        <item name="android:textSize">12.0dip</item>
+        <item name="android:textSize">13.0dip</item>
         <item name="android:ellipsize">marquee</item>
-        <item name="android:paddingLeft">3.0dip</item>
+        <item name="android:paddingLeft">5.0dip</item>
         <item name="android:paddingTop">0.0dip</item>
-        <item name="android:paddingRight">3.0dip</item>
+        <item name="android:paddingRight">5.0dip</item>
         <item name="android:paddingBottom">2.0dip</item>
         <item name="android:singleLine">true</item>
         <item name="android:drawablePadding">-2.5dip</item>

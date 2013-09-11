@@ -40,7 +40,9 @@
 .field private mPageIndicatorGap:I
 
 .field private mPageIndicatorLarge:Landroid/graphics/drawable/Drawable;
-
+#hq start <<
+.field private mPageIndicatorDef:Landroid/graphics/drawable/Drawable;
+#hq end >>
 .field private mPageIndicatorLeft:I
 
 .field private mPageIndicatorTop:I
@@ -109,6 +111,16 @@
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/launcher2/PageIndicatorManager;->mPageIndicatorLarge:Landroid/graphics/drawable/Drawable;
+    #hq start <<
+    const v1, 0x7f020131
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/launcher2/PageIndicatorManager;->mPageIndicatorDef:Landroid/graphics/drawable/Drawable;
+
+    #hq end >>
 
     .line 69
     iput p2, p0, Lcom/android/launcher2/PageIndicatorManager;->mPageIndicatorTop:I
@@ -1170,6 +1182,11 @@
     iget-object v3, p0, Lcom/android/launcher2/PageIndicatorManager;->mPageIndicatorLarge:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v3}, Lcom/android/launcher2/PageIndicator;->setPageDrawable(Landroid/graphics/drawable/Drawable;)V
+    #hq start <<
+    iget-object v3, p0, Lcom/android/launcher2/PageIndicatorManager;->mPageIndicatorDef:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, v3}, Lcom/android/launcher2/PageIndicator;->setPageDrawableDef(Landroid/graphics/drawable/Drawable;)V
+    #hq end >>
 
     .line 108
     invoke-virtual {v0, v2}, Lcom/android/launcher2/PageIndicator;->setPageCount(I)V

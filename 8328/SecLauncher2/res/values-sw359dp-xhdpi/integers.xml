@@ -19,5 +19,5 @@
     <integer name="folder_icon_col_size">2</integer>
     <integer name="open_folder_fixed_col_count">4</integer>
     <integer name="contextualPage_cellCountX">4</integer>
-    <integer name="contextualPage_cellCountY">5</integer>
+    <integer name="contextualPage_cellCountY">4</integer>
 </resources>

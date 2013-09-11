@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="app_icon_size">40.0dip</dimen>
+    <dimen name="app_icon_size">44.0dip</dimen>
     <dimen name="home_cellWidth_port">64.0dip</dimen>
-    <dimen name="home_cellHeight_port">86.0dip</dimen>
+    <dimen name="home_cellHeight_port">92.0dip</dimen>
     <dimen name="home_cellGapX_port">10.0dip</dimen>
     <dimen name="home_cellGapY_port">7.0dip</dimen>
     <dimen name="clingPunchThroughGraphicCenterRadius">94.0dip</dimen>
@@ -15,9 +15,9 @@
     <item type="dimen" name="home_cellHeight">@dimen/home_cellHeight_port</item>
     <item type="dimen" name="home_cellGapX">@dimen/home_cellGapX_port</item>
     <item type="dimen" name="home_cellGapY">@dimen/home_cellGapY_port</item>
-    <dimen name="home_pageIndicatorGap">12.0dip</dimen>
-    <dimen name="home_pageIndicatorTop">486.0dip</dimen>
-    <dimen name="home_pageIndicatorTopShrunken">486.0dip</dimen>
+    <dimen name="home_pageIndicatorGap">8.0dip</dimen>
+    <dimen name="home_pageIndicatorTop">510.0dip</dimen>
+    <dimen name="home_pageIndicatorTopShrunken">520.0dip</dimen>
     <dimen name="pageindicator_grow_by">3.0dip</dimen>
     <dimen name="pageindicator_fastscroll_fontsize">30.5dip</dimen>
     <dimen name="pageindicator_panel_size">54.0dip</dimen>
@@ -25,6 +25,7 @@
     <dimen name="drift_slop">6.669983dip</dimen>
     <dimen name="folder_cell_width">74.0dip</dimen>
     <dimen name="folder_cell_height">95.0dip</dimen>
+    <dimen name="folder_icon_appIconTopPadding">8.0dip</dimen>
     <dimen name="workspace_overscroll_drawable_padding">0.0dip</dimen>
     <dimen name="wsqv_verticalGap">20.0dip</dimen>
     <dimen name="wsqv_horizontalGap">20.0dip</dimen>
@@ -33,9 +34,9 @@
     <dimen name="wsqv_DeleteDorpTartget_TextSize">12.0dip</dimen>
     <dimen name="panel_frame_expand_x">269.0px</dimen>
     <dimen name="panel_frame_expand_y">177.0px</dimen>
-    <dimen name="hotseat_barSize">100.0dip</dimen>
+    <dimen name="hotseat_barSize">80.0dip</dimen>
     <dimen name="hotseat_cellWidth">72.0dip</dimen>
-    <dimen name="hotseat_cellHeight">100.0dip</dimen>
+    <dimen name="hotseat_cellHeight">80.0dip</dimen>
     <dimen name="hotseat_cellGapX">0.0dip</dimen>
     <dimen name="hotseat_cellGapY">9.0dip</dimen>
     <dimen name="toolbar_button_vertical_padding">0.0dip</dimen>
@@ -45,7 +46,7 @@
     <dimen name="menu_titleHeight">48.0dip</dimen>
     <dimen name="menu_titleMarginLeft">0.0dip</dimen>
     <dimen name="menu_titleMarginRight">0.0dip</dimen>
-    <dimen name="tab_text_size">19.0dip</dimen>
+    <dimen name="tab_text_size">16.0dip</dimen>
     <dimen name="tab_download_width">56.0dip</dimen>
     <dimen name="tab_divider_width">1.0dip</dimen>
     <dimen name="menu_title_bar_left_padding">14.0dip</dimen>
@@ -55,8 +56,8 @@
     <dimen name="menu_edit_done_left_padding">55.0dip</dimen>
     <dimen name="menu_edit_cancel_left_padding">43.0dip</dimen>
     <dimen name="menu_editDragBarSize">70.0dip</dimen>
-    <dimen name="popup_menu_button_left_padding">15.0dip</dimen>
-    <dimen name="popup_menu_button_right_padding">13.0dip</dimen>
+    <dimen name="popup_menu_button_left_padding">5.0dip</dimen>
+    <dimen name="popup_menu_button_right_padding">3.0dip</dimen>
     <dimen name="popup_menu_button_top_padding">11.0dip</dimen>
     <dimen name="popup_menu_button_bottom_padding">12.0dip</dimen>
     <dimen name="menuAppsGrid_pageMarginPlusPaddingTop">27.0dip</dimen>
@@ -108,7 +109,7 @@
     <dimen name="popup_height">100.0dip</dimen>
     <dimen name="popup_width_inc">50.0dip</dimen>
     <dimen name="popup_height_inc">0.0dip</dimen>
-    <dimen name="popup_font_size">69.0dip</dimen>
+    <dimen name="popup_font_size">5.0dip</dimen>
     <dimen name="index_level_0_width">25.669983dip</dimen>
     <dimen name="index_level_0_padding_left">4.669983dip</dimen>
     <dimen name="index_level_0_padding_top">7.3399963dip</dimen>
@@ -127,7 +128,7 @@
     <dimen name="badge_fontsize_small">12.0dip</dimen>
     <dimen name="icon_centerXOffset">6.0dip</dimen>
     <dimen name="icon_topToTopOffset">-2.5dip</dimen>
-    <dimen name="folder_icon_top_margin">14.0dip</dimen>
+    <dimen name="folder_icon_top_margin">0.0dip</dimen>
     <dimen name="folder_icon_left_margin">3.5dip</dimen>
     <dimen name="folder_icon_bottom_margin">5.5dip</dimen>
     <dimen name="open_folder_title_size">16.0dip</dimen>

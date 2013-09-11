@@ -86,6 +86,8 @@
 
 .field private mPageDrawable:Landroid/graphics/drawable/Drawable;
 
+.field private mPageDrawableDef:Landroid/graphics/drawable/Drawable;
+
 .field private mPageNumberBg:Landroid/graphics/drawable/Drawable;
 
 .field private mPrePageNumber:I
@@ -278,7 +280,50 @@
 
     return-object v0
 .end method
+#hq start <<
+.method static synthetic access$201(Lcom/android/launcher2/PageIndicator;)Landroid/graphics/drawable/Drawable;
+    .locals 4
+    .parameter "x0"
 
+    .prologue
+    .line 19
+    #hq start <<
+    #invoke-static {}, Lcom/android/launcher2/LauncherApplication;->getHomeScreenIndex()I
+    #move-result v1
+    
+    #invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    
+    #move-result-object v2
+
+    #new-instance v1, Ljava/lang/StringBuilder;
+
+    #invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    #const-string v3, "access201: "
+
+    #invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    #move-result-object v1
+
+    #invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    #move-result-object v1
+
+    #invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    #move-result-object v1
+
+    #const-string v2, "zxf-l" 
+    
+    #invoke-static {v2,v1} ,Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    #hq end >>
+
+    
+    iget-object v0, p0, Lcom/android/launcher2/PageIndicator;->mPageDrawableDef:Landroid/graphics/drawable/Drawable;
+
+    return-object v0
+.end method
+#hq end >>
 .method static synthetic access$300(Lcom/android/launcher2/PageIndicator;)Lcom/android/launcher2/ScalarAnimator;
     .locals 1
     .parameter "x0"
@@ -2014,7 +2059,22 @@
     .line 157
     return-void
 .end method
+#hq start <<
+.method public setPageDrawableDef(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+    .parameter "d"
 
+    .prologue
+    .line 155
+    iput-object p1, p0, Lcom/android/launcher2/PageIndicator;->mPageDrawableDef:Landroid/graphics/drawable/Drawable;
+
+    .line 156
+    invoke-virtual {p0}, Lcom/android/launcher2/PageIndicator;->updatePositions()V
+
+    .line 157
+    return-void
+.end method
+#hq end >>
 .method public setScrollPosition(F)V
     .locals 0
     .parameter "x"
